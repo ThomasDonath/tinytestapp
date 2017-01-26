@@ -2,8 +2,8 @@ var express = require('express');
 var os = require('os');
 var app = express();
 
-let port = process.env.APP_PORT || 8080;
-let message = process.env.APP_MESSAGE || 'default message';
+var port = process.env.APP_PORT || 8080;
+var message = process.env.APP_MESSAGE || 'default message';
 
 app.get('/', function (req, res) {
   res.send(`
