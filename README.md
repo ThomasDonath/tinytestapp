@@ -9,7 +9,7 @@ npm install
 npm start
 
 # or within a container
-docker run --rm --name tinytestapp -p 8080:8080 -e "yet another greeting from inside a container" tinytestapp
+docker run --rm --name tinytestapp -p 8080:8080 -e APP_MESSAGE="yet another greeting from inside a container" tinytestapp
 ```
 
 GET returns a message with host name and port; message can be customized via APP_MESSAGE
