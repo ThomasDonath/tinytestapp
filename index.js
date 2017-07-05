@@ -28,7 +28,7 @@ let fibunacci = function (maxCtr, myNumber, me) {
   let f = 0
   let fList = []
 
-  console.log(`\n me${myNumber} another calculation`);
+  //console.log(`\n me${myNumber} another calculation`);
 
   for (i = 0; i < maxCtr; i++) {
     f = i + j
@@ -44,8 +44,6 @@ let fibunacci = function (maxCtr, myNumber, me) {
   }
   setTimeout(() => fibunacci(DOWORK, myNumber, me), PAUSE)
 }
-
-//fibunacci(10, 1, fibunacci)
 
 let f0 = fibunacci
 let f1 = fibunacci
