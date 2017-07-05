@@ -2,7 +2,7 @@ var express = require('express');
 var os = require('os');
 var app = express();
 
-var port = process.env.APP_PORT || 8080;
+var port = process.env.APP_PORT || '8080';
 var message = process.env.APP_MESSAGE || 'default message';
 
 app.get('/', function (req, res) {
@@ -22,4 +22,3 @@ app.get('/', function (req, res) {
 app.listen(port, function () {
   console.log(`Example app listening on port ${port}!`);
 });
-
