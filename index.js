@@ -4,10 +4,12 @@ var app = express();
 
 var port = process.env.APP_PORT || '8080';
 var message = process.env.APP_MESSAGE || 'default message';
+var muted = false;
 
 app.get('/', function (req, res) {
-  console.log("got a request")
-  res.send(`
+  if (!muted) {
+    console.log("got a request")
+    res.send(`
 <!DOCTYPE html>
 <head title="TestApplikation">
 </head>
@@ -15,10 +17,21 @@ app.get('/', function (req, res) {
     <h1>Moin Moin :)</h1>
     Die Testapp läuft auf <b>${os.hostname()}</b> an Port <b>${port}</b> mit dem Text <b>"${message}"</b>
 </body>
-</html>`
+</html>`);
+  } else {
+    console.log('got a request, but muted');
 
-  );
+    res.writeHead(500);
+    res.end();
+    res.send;
+  }
 });
+
+app.post('/mute', function (req, res) {
+  console.log('toggle "muted"')
+  muted = !muted;
+  res.send('');
+})
 
 const DOWORK = 1000
 const PAUSE = 1
@@ -68,5 +81,5 @@ f8(DOWORK, 8, f8)
 f9(DOWORK, 9, f9)
 
 app.listen(port, function () {
-  console.log(`Example app listening on port ${port}!`);
+  console.log(`Tiny TestApp listening on port ${port}!`);
 });

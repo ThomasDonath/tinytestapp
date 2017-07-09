@@ -14,3 +14,5 @@ ENV APP_MESSAGE="Hello World from inside a container"
 CMD ["npm", "start"]
 
 EXPOSE 8080
+
+HEALTHCHECK CMD curl --fail localhost:8080 || exit 1
