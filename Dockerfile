@@ -1,4 +1,4 @@
-FROM node
+FROM node:8.1
 
 MAINTAINER td@thomasdonath.com
 
