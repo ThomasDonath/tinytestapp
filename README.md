@@ -8,9 +8,9 @@ A tiny Node.js application to test container environments and such stuff.
 curl -f http://localhost:8080/
 ```
 
-Message can be customized via $APP_MESSAGE.
+Message can be customized via \$APP_MESSAGE.
 
-The Conatiner uses this URL also as healthcheck.
+The Container uses this URL also as healthcheck.
 
 put <http://localhost:8080/mute> toggles a flag so the server responses to the greeting-URL succuessfully or with http-500, so you can simulate a non working server.
 
@@ -33,5 +33,7 @@ To build it as docker image
 ```shell
 docker build -t tinytestapp .
 docker tag tinytestapp:latest thomdo/tinytestapp:latest
+
+docker login
 docker push thomdo/tinytestapp:latest
 ```
