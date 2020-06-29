@@ -9,6 +9,8 @@ ADD package.json ./
 
 RUN npm install
 
+# TODO: multistage build
+
 ENV APP_MESSAGE="Hello World from inside a container"
 
 CMD ["npm", "start"]
