@@ -1,0 +1,14 @@
+stages:
+  - build_image
+
+build_image:
+  stage: build_image
+  image: docker:git
+  services:
+    # link docker daemon
+    - docker:dind
+  script:
+    - docker build -t thomdo/tinytestapp:latest .
+
+    - docker login -u thomdo -p "$DOCKER_PASS"
+    - docker push thomdo/tinytestapp:latest
